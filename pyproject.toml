@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "case"
+version = "0.1.0"
+description = "Case Pilar para vaga de Software Engineer"
+authors = ["Eduardo Alencar <ealencar10@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
