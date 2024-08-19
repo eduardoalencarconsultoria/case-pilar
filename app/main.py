@@ -3,6 +3,7 @@ from app.model import VowelCountRequest, SortRequest
 
 app = FastAPI()
 
+
 @app.post("/vowel_count")
 async def vowel_count(vowel_count_request: VowelCountRequest):
     response = {}
