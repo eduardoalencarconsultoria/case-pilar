@@ -54,7 +54,6 @@ def test_vowel_count_with_invalid_route_name() -> None:
 
 def test_vowel_count_with_invalid_http_method() -> None:
     client = TestClient(app)
-    data = {"words": ["batman", "robin", "coringa"]}
     response = client.get(
         "/vowel_count",
         headers={'Content-Type': 'application/json'}
@@ -90,3 +89,14 @@ def test_sort_desc() -> None:
     )
     content = response.json()
     assert content == ["robin", "coringa", "batman"]
+
+
+def test_sort_with_invalid_order() -> None:
+    client = TestClient(app)
+    data = {"words": ["batman", "robin", "coringa"], "order": "invalid"}
+    response = client.post(
+        "/sort",
+        json=data
+    )
+    content = response.json()
+    assert content['detail'][0]['msg'] == "Input should be 'asc' or 'desc'"
