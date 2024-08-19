@@ -26,6 +26,8 @@ Qualquer dúvida, enviar por email: renato.almeida@soupilar.com.br
 ## TODO's
 
 - [x] Setup do projeto fastapi, com uma rota hello-world 
+- [x] Setup ferramental para testes (pytest)
+- [x] Criar teste para rota hello-world
 - [ ] Validar requisição antes de processar. (Método HTTP, rota que não existe, content type deve ser application/json)
 - [ ] Criar rota /vowel_count- 
 - [ ] Criar rota /sort 
