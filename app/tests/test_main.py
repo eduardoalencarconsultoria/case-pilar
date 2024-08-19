@@ -28,5 +28,8 @@ def test_vowel_count_bad_request() -> None:
         "/vowel_count",
         json=data
     )
-    assert response.status_code == HTTPStatus.UNPROCESSABLE_ENTITY  
+    assert response.status_code == HTTPStatus.UNPROCESSABLE_ENTITY 
+    content = response.json()
+    assert content['detail'][0]['msg'] == "Input should be a valid list"
+
     
