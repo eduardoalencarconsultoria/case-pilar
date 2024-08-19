@@ -42,3 +42,12 @@ def test_vowel_count_with_invalid_content_type() -> None:
     )
     assert response.status_code == HTTPStatus.UNPROCESSABLE_ENTITY 
     
+def test_vowel_count_with_invalid_route_name() -> None:
+    client = TestClient(app)
+    data = {"words": ["batman", "robin", "coringa"]}
+    response = client.post(
+        "/vowel_count_not_found",
+        headers={'Content-Type': 'application/json'},
+        json=data
+    )
+    assert response.status_code == HTTPStatus.NOT_FOUND
