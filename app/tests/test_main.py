@@ -124,7 +124,6 @@ def test_sort_with_invalid_content() -> None:
 
 def test_sort_with_invalid_http_method() -> None:
     client = TestClient(app)
-    data = {"words": ["batman", "robin", "coringa"], "order": "invalid"}
     response = client.get(
         "/sort",
     )
