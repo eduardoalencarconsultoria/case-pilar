@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from app.model import VowelCountRequest
 
 app = FastAPI()
 
@@ -8,12 +8,8 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-class VowelCountRequest(BaseModel):
-    words: list
-
 @app.post("/vowel_count")
 async def vowel_count(vowel_count_request: VowelCountRequest):
-    print(vowel_count_request.words)
     response = {}
     for word in vowel_count_request.words:
         response.update({word: _vowel_count(word)})
