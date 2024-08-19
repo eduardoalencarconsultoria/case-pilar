@@ -51,3 +51,12 @@ def test_vowel_count_with_invalid_route_name() -> None:
         json=data
     )
     assert response.status_code == HTTPStatus.NOT_FOUND
+
+def test_vowel_count_with_invalid_http_method() -> None:
+    client = TestClient(app)
+    data = {"words": ["batman", "robin", "coringa"]}
+    response = client.get(
+        "/vowel_count",
+        headers={'Content-Type': 'application/json'}
+    )
+    assert response.status_code == HTTPStatus.METHOD_NOT_ALLOWED
