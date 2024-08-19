@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = {extras = ["standard"], version = "^0.112.1"}
+pythonanywhere = "^0.14.1"
 
 
 [tool.poetry.group.dev.dependencies]
