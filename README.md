@@ -1,4 +1,5 @@
 # Case Pilar
+> https://case-pilar-eduardo-alencar-15d805dfabdd.herokuapp.com/docs
 
 ## Requisitos
 - Python 3.11 ou superior;
@@ -31,4 +32,4 @@ Para rodar o projeto localmente:
 - [x] Validar requisição antes de processar. (Método HTTP, rota que não existe, content type deve ser application/json)
 - [x] Criar rota /vowel_count- 
 - [x] Criar rota /sort 
-- [ ] Construir pipeline com lint, testes e deploy 
+- [x] Construir pipeline com lint, testes e deploy 
