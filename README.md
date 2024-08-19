@@ -21,3 +21,12 @@ Entregar nos seguintes e-mails: para renato.almeida@soupilar.com.br e
 teixeira.laary@gmail.com
 
 Qualquer dúvida, enviar por email: renato.almeida@soupilar.com.br
+
+
+## TODO's
+
+- [ ] Setup do projeto fastapi, com uma rota hello-world 
+- [ ] Validar requisição antes de processar. (Método HTTP, rota que não existe, content type deve ser application/json)
+- [ ] Criar rota /vowel_count- 
+- [ ] Criar rota /sort 
+- [ ] Construir pipeline com lint, testes e deploy 
