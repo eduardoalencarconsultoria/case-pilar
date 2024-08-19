@@ -21,4 +21,12 @@ def test_vowel_count() -> None:
     content = response.json()
     assert content == {"batman": 2, "robin": 2, "coringa": 3}
 
+def test_vowel_count_bad_request() -> None:
+    client = TestClient(app)
+    data = {"words": 123}
+    response = client.post(
+        "/vowel_count",
+        json=data
+    )
+    assert response.status_code == HTTPStatus.UNPROCESSABLE_ENTITY  
     
