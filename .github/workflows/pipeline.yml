@@ -32,6 +32,7 @@ jobs:
       run: |
         pytest -vv
     - name: Deploy to Heroku
+      environment: Heroku
       env:
         HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
