@@ -60,3 +60,33 @@ def test_vowel_count_with_invalid_http_method() -> None:
         headers={'Content-Type': 'application/json'}
     )
     assert response.status_code == HTTPStatus.METHOD_NOT_ALLOWED
+
+def test_vowel_count_with_invalid_request_body() -> None:
+    client = TestClient(app)
+    data = {"words": [1, 2, 3]}
+    response = client.post(
+        "/vowel_count",
+        headers={'Content-Type': 'application/json'},
+        json=data
+    )
+    assert response.status_code == HTTPStatus.UNPROCESSABLE_ENTITY
+
+def test_sort_asc() -> None:
+    client = TestClient(app)
+    data = {"words": ["batman", "robin", "coringa"], "order": "asc"}
+    response = client.post(
+        "/sort",
+        json=data
+    )
+    content = response.json()
+    assert content == ["batman", "coringa", "robin"]
+
+def test_sort_desc() -> None:
+    client = TestClient(app)
+    data = {"words": ["batman", "robin", "coringa"], "order": "desc"}
+    response = client.post(
+        "/sort",
+        json=data
+    )
+    content = response.json()
+    assert content == ["robin", "coringa", "batman"]
