@@ -14,12 +14,14 @@ Para rodar o projeto localmente:
 1. Clone o repositório
 2. Ative o ambiente virtual: `poetry shell`
 3. Instale as dependência com Poetry: `poetry install`
+4. Execute: `fastapi dev main.py` 
+5. Acesse: http://localhost:8000/docs
 
 ## Comandos
 
 1. Para rodar os testes use: `pytest -vv` na raiz do projeto;
 2. Para formatar os arquivos use: `sh scripts/format.sh` na raiz do projeto;
-2. Para lint use: `sh scripts/lint.sh` na raiz do projeto;
+3. Para lint use: `sh scripts/lint.sh` na raiz do projeto;
 
 ## TODO's
 
