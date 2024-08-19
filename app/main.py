@@ -8,6 +8,7 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
+
 @app.post("/vowel_count")
 async def vowel_count(vowel_count_request: VowelCountRequest):
     response = {}
@@ -16,11 +17,10 @@ async def vowel_count(vowel_count_request: VowelCountRequest):
     return response
 
 
-
 @app.post("/sort")
 async def sort(sort_request: SortRequest):
     order = sort_request.order
-    return sorted(sort_request.words, reverse=order=="desc")
+    return sorted(sort_request.words, reverse=order == "desc")
 
 
 def _vowel_count(word: str) -> int:
